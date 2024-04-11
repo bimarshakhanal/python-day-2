@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Ram",
+    "age": 30
+  },
+  {
+    "name": "Sita",
+    "age": 25
+  },
+  {
+    "name": "Krishna",
+    "age": 22
+  },
+  {
+    "name": "Arjun",
+    "age": 28
+  },
+  {
+    "name": "Draupadi",
+    "age": 20
+  },
+  {
+    "name": "Bhima",
+    "age": 35
+  },
+  {
+    "name": "Nakul",
+    "age": 18
+  },
+  {
+    "name": "Sahadeva",
+    "age": 18
+  },
+  {
+    "name": "Yudhishthira",
+    "age": 32
+  },
+  {
+    "name": "Duryodhana",
+    "age": 27
+  },
+  [
+    {
+      "name": "David",
+      "age": 32
+    },
+    {
+      "name": "John",
+      "age": 25
+    }
+  ]
+]
