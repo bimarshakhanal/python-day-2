@@ -3,6 +3,8 @@ Write a Python program that takes user input for age. Create a custom exception
 InvalidAgeError to handle cases where the age is below 0 or above 120.
 '''
 
+import logging
+
 class InvalidAgeError(Exception):
     def __init__(self, age):
         self.age = age
@@ -21,4 +23,4 @@ if __name__=='__main__':
     try:
         check_age(age)
     except InvalidAgeError as e:
-        print(e)
+        logging.error(e)

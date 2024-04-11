@@ -4,6 +4,7 @@ JSON data from the file, add the new dictionary to it, and write the updated dat
 '''
 
 import json
+import logging
 
 def update_JSON(fname, new_data):
     '''
@@ -18,10 +19,11 @@ def update_JSON(fname, new_data):
             data = json.loads(f.read())
     except FileNotFoundError:
         # Create a new empty list if file doesn't exist
+        logging.info('File not found, creating a new file.')
         data = []
     except json.JSONDecodeError:
         # Handle invalid JSON data (optional)
-        print(f"Error: Invalid JSON data found in {fname}.")
+        logging.error(f"Invalid JSON data found in {fname}.")
         return
     
     data.append(new_data)

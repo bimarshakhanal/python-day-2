@@ -3,6 +3,8 @@ Implement a program that reads user input for a password. Create a custom except
 WeakPasswordError to handle cases where the password is shorter than 8 characters.
 '''
 
+import logging
+
 class WeakPasswordError(Exception):
     def __init__(self):
         self.message = f"Weak password: Password must be of 8 or more characters."
@@ -20,4 +22,4 @@ if __name__=='__main__':
     try:
         check_password(password)
     except WeakPasswordError as e:
-        print(e)
+        logging.error(e)

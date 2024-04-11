@@ -3,12 +3,14 @@ Write a Python program that takes two integers as input and performs division (n
 Handle the ZeroDivisionError and display a custom error message when the second number is zero.
 '''
 
+import logging
+
 def safe_division(a,b):
     '''Function to divide two numbers with zero division exception check.'''
     try:
         return a/b
     except ZeroDivisionError:
-        print("Error: Second number cannot be zero.")
+        logging.error("Second number cannot be zero.")
         return None
     
 if __name__=='__main__':

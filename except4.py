@@ -3,9 +3,11 @@ Write a Python program that takes two integers as input and performs division (n
 both ValueError (if non-integer input) and ZeroDivisionError and display appropriate error messages.
 '''
 
+import logging
+
 def safe_division(a,b):
     '''
-    Function to display content of file
+    Function to perform safe division - handle division by zero
     Args:
         a: First number
         b: Second number
@@ -14,9 +16,9 @@ def safe_division(a,b):
     try:
          print("Result: ",int(a)/int(b))
     except ValueError:
-        print("Error: Both input should be a number.")
+        logging.error("Both input should be a number.")
     except ZeroDivisionError:
-        print("Error: Second number should not be zero.")
+        logging.error("Second number should not be zero.")
     
 if __name__=='__main__':
     #take user input

@@ -2,6 +2,7 @@
 Create a function search_log that takes a log file and a search keyword as input. The function
 should find and display all lines containing the search keyword.
 '''
+import logging
 
 def process_csv(fname, keyword):
     '''
@@ -16,7 +17,7 @@ def process_csv(fname, keyword):
                 if keyword.lower() in line.lower():  # Case-insensitive search
                     print(line.strip())
     except FileNotFoundError:
-        print('Error: Failed to open log file.')
+        logging.error('Failed to open log file.')
 
 
 if __name__=='__main__':
