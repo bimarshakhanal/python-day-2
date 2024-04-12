@@ -4,6 +4,8 @@ should find and display all lines containing the search keyword.
 '''
 import logging
 
+logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
+
 def process_csv(fname, keyword):
     '''
     Function to search and filter log file using keyword.

@@ -1,0 +1,14 @@
+ERROR:root:Second number cannot be zero.
+ERROR:root:Filename with given name not found.
+ERROR:root:Input cannot be converted to integer.
+INFO:root:Input Converted.
+ERROR:root:Second number should not be zero.
+ERROR:root:Both input should be a number.
+INFO:root:Division sucessful.
+INFO:root:File opened,log.txt
+INFO:root:Division sucessful.
+INFO:root:Age validation sucessful
+ERROR:root:Invalid age 1111: Age must be between 0 and 120.
+ERROR:root:Weak password: Password must be of 8 or more characters.
+INFO:root:Password Validation completed.
+WARNING:root:File not found, creating a new file.

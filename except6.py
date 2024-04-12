@@ -5,6 +5,8 @@ WeakPasswordError to handle cases where the password is shorter than 8 character
 
 import logging
 
+logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
+
 class WeakPasswordError(Exception):
     def __init__(self):
         self.message = f"Weak password: Password must be of 8 or more characters."
@@ -21,5 +23,6 @@ if __name__=='__main__':
     password = input("Enter password: ")
     try:
         check_password(password)
+        logging.info('Password Validation completed.')
     except WeakPasswordError as e:
         logging.error(e)

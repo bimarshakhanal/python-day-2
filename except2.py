@@ -5,6 +5,8 @@ contents. Handle the FileNotFoundError and display an error message if the file 
 
 import logging
 
+logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
+
 def read_file(fname):
     '''
     Function to display content of file
@@ -14,6 +16,7 @@ def read_file(fname):
 
     try:
          file = open(fname, 'r')
+         logging.info(f"File opened,{fname}")
          print('***File content***\n',file.read())
     except FileNotFoundError:
         logging.error("Filename with given name not found.")

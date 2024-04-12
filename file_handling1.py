@@ -5,6 +5,8 @@ Create a new CSV file called "adults.csv" with only the rows of individuals who 
 
 import logging
 
+logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
+
 def process_csv(fname, header=True):
     '''
     Function to filter csv file based on age and create new csv.
@@ -20,6 +22,7 @@ def process_csv(fname, header=True):
                     name, age = row.strip().split(',')
                     if int(age) >= 18:
                         f2.write(f'{name},{age}\n')
+        logging.info('CSV Processing completed.')
     except FileNotFoundError:
          logging.error('Failed to open file.')
     except ValueError:

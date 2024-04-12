@@ -5,6 +5,8 @@ InvalidAgeError to handle cases where the age is below 0 or above 120.
 
 import logging
 
+logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
+
 class InvalidAgeError(Exception):
     def __init__(self, age):
         self.age = age
@@ -22,5 +24,6 @@ if __name__=='__main__':
     age = int(input("Enter your age: "))
     try:
         check_age(age)
+        logging.info('Age validation sucessful')
     except InvalidAgeError as e:
         logging.error(e)

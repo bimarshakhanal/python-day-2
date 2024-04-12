@@ -4,6 +4,8 @@ ValueError and display a custom error message when the input cannot be converted
 '''
 import logging
 
+logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
+
 def convert_input(inp):
     '''
     Function to display content of file
@@ -12,7 +14,7 @@ def convert_input(inp):
     '''
 
     try:
-         logging.info("Input Converted: ",int(inp))
+         logging.info("Input Converted.")
     except ValueError:
         logging.error("Input cannot be converted to integer.")
     
