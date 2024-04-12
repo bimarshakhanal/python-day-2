@@ -14,6 +14,7 @@ def convert_input(inp):
     '''
 
     try:
+         inp = int(inp)
          logging.info("Input Converted.")
     except ValueError:
         logging.error("Input cannot be converted to integer.")
