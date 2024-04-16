@@ -4,26 +4,28 @@ should find and display all lines containing the search keyword.
 '''
 import logging
 
-logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
+logging.basicConfig(filename='example.log',
+                    encoding='utf-8', level=logging.DEBUG)
 
-def process_csv(fname, keyword):
+
+def process_csv(filename, search_term):
     '''
-    Function to search and filter log file using keyword.
+    Function to search and filter log file using search_term.
     Args:
         fname: Name of log file to open
-        keyword: Keyword to search in logfile
+        search_term: Keyword to search in logfile
     '''
     try:
-        with open(fname, 'r') as log:
+        with open(filename, 'r', encoding='utf-8') as log:
             for line in log:
-                if keyword.lower() in line.lower():  # Case-insensitive search
+                if search_term.lower() in line.lower():  # Case-insensitive search
                     print(line.strip())
     except FileNotFoundError:
         logging.error('Failed to open log file.')
 
 
-if __name__=='__main__':
-    #take user input
+if __name__ == '__main__':
+    # take user input
     fname = input("Enter file name: ")
     keyword = input("Enter keyword to search: ")
-    process_csv(fname,keyword)
+    process_csv(fname, keyword)

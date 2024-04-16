@@ -5,9 +5,11 @@ Handle the ZeroDivisionError and display a custom error message when the second 
 
 import logging
 
-logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
+logging.basicConfig(filename='example.log',
+                    encoding='utf-8', level=logging.DEBUG)
 
-def safe_division(a,b):
+
+def safe_division(a, b):
     '''Function to divide two numbers with zero division exception check.'''
     try:
         logging.info('Division sucessful.')
@@ -15,10 +17,11 @@ def safe_division(a,b):
     except ZeroDivisionError:
         logging.error("Second number cannot be zero.")
         return None
-    
-if __name__=='__main__':
-    #take user input
+
+
+if __name__ == '__main__':
+    # take user input
     a = int(input("Enter first number: "))
     b = int(input("Enter second number: "))
 
-    print('Result: ', safe_division(a,b))
+    print('Result: ', safe_division(a, b))

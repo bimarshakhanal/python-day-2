@@ -5,9 +5,11 @@ both ValueError (if non-integer input) and ZeroDivisionError and display appropr
 
 import logging
 
-logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
+logging.basicConfig(filename='example.log',
+                    encoding='utf-8', level=logging.DEBUG)
 
-def safe_division(a,b):
+
+def safe_division(a, b):
     '''
     Function to perform safe division - handle division by zero
     Args:
@@ -16,16 +18,17 @@ def safe_division(a,b):
     '''
 
     try:
-         print("Result: ",int(a)/int(b))
-         logging.info("Division sucessful.")
+        print("Result: ", int(a)/int(b))
+        logging.info("Division sucessful.")
     except ValueError:
         logging.error("Both input should be a number.")
     except ZeroDivisionError:
         logging.error("Second number should not be zero.")
-    
-if __name__=='__main__':
-    #take user input
+
+
+if __name__ == '__main__':
+    # take user input
     a = input("Enter first number: ")
     b = input("Enter second number: ")
 
-    safe_division(a,b)
+    safe_division(a, b)

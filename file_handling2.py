@@ -1,22 +1,25 @@
 '''
-Create a function add_to_json that takes a filename and a dictionary as input.The function should read the
-JSON data from the file, add the new dictionary to it, and write the updated data back to the same file.
+Create a function add_to_json that takes a filename and a dictionary as input.The function should 
+read the JSON data from the file, add the new dictionary to it, and write the updated data back to
+the same file.
 '''
 
 import json
 import logging
 
-logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
+logging.basicConfig(filename='example.log',
+                    encoding='utf-8', level=logging.DEBUG)
 
-def update_JSON(fname, new_data):
+
+def update_json(filename, data):
     '''
     Function to update JSON file.
     Args:
-        fname: Name of csv file to open
-        new_data: Data to update
+        filename: Name of csv file to open
+        data: Data to update
     '''
     try:
-        with open(fname, 'r') as f:
+        with open(filename, 'r', encoding='utf-8') as f:
             # Read existing data (assuming it's valid JSON)
             data = json.loads(f.read())
     except FileNotFoundError:
@@ -25,29 +28,29 @@ def update_JSON(fname, new_data):
         data = []
     except json.JSONDecodeError:
         # Handle invalid JSON data (optional)
-        logging.error(f"Invalid JSON data found in {fname}.")
+        logging.error(f"Invalid JSON data found in {filename}.")
         return
-    
+
     try:
-        data.append(new_data)
+        data.append(data)
     except ValueError:
         logging.error('Tried to add invalid data.')
     # Write updated data back to the file
-    with open(fname, 'w') as outfile:
+    with open(filename, 'w', encoding='utf-8') as outfile:
         json.dump(data, outfile, indent=2)
 
 
-if __name__=='__main__':
-    #take user input
+if __name__ == '__main__':
+    # take user input
     fname = input("Enter file name: ")
     new_data = [
-            {
+        {
             "name": "David",
             "age": 32
-            },
-            {
+        },
+        {
             "name": "John",
             "age": 25
-            }
-        ]
-    update_JSON(fname,new_data)
+        }
+    ]
+    update_json(fname, new_data)
